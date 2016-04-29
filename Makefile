@@ -2,7 +2,7 @@
 #
 # Author: "Bob Peters (bob@embedwise.com)"
 #
-# Description: This is Makefile for an example project program. This
+# Description: This is Makefile for an example project.
 # 	Typing 'make' will create the executable file example.
 
 
@@ -29,7 +29,7 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
 # typing 'make' will invoke the "all"
-all: example
+all: directories example
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
@@ -37,7 +37,12 @@ $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 example: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS) $(LIBS)
 
-.PHONY: clean
+directories: $(ODIR)
+
+$(ODIR):
+	mkdir -p $(ODIR)
+
+.PHONY: directories clean
 
 clean:
 	rm -f $(ODIR)/*.o *~ example 
