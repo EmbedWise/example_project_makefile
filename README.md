@@ -6,4 +6,4 @@ http://www.embedwise.com/2016/04/16/jenkins-in-a-linux-container-part-1/
 
 http://www.embedwise.com/2016/05/02/jenkins-in-a-linux-container-part-2/
 
-Feel free to visit my Blog http://www.embedwise.com
+Feel free to visit my Blog https://www.embedwise.com or Twitter https://twitter.com/EmbedWise
